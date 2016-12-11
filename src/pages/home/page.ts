@@ -9,8 +9,8 @@ import { StackConfig, ThrowEvent, DragEvent, SwingStackComponent, SwingCardCompo
  */
 @Component({
     template: `
-        <ion-header>
-            <ion-navbar>
+        <ion-header no-shadow>
+            <ion-navbar color="white">
                 <button ion-button menuToggle>
                     <ion-icon name="menu"></ion-icon>
                 </button>
