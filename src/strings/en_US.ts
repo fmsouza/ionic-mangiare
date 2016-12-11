@@ -6,3 +6,8 @@ export const TAB_CHATS: string = 'Chats';
 
 export const PAGE_SETTINGS_TITLE: string = 'Other stuff';
 export const TAB_SETTINGS: string = 'Others';
+
+export const PAGE_ABOUT_TITLE: string = 'About the app';
+export const PAGE_ABOUT_CONTENT: string = `
+    <h1>Here comes the content</h1>
+`;

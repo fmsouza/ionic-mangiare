@@ -1,4 +1,6 @@
 import {Component} from '@angular/core';
+import {NavController} from 'ionic-angular';
+import {AboutPage} from '../about/page';
 import strings from '../../strings';
 
 /**
@@ -52,7 +54,7 @@ import strings from '../../strings';
                     <ion-label>Receber notificações</ion-label>
                     <ion-toggle></ion-toggle>
                 </ion-item>
-                <ion-item>
+                <ion-item (click)="onClickAbout()">
                     <ion-icon name="help-circle" item-left></ion-icon>
                     Sobre
                 </ion-item>
@@ -68,5 +70,11 @@ export class SettingsPage {
 
     public get Text(): any {
         return strings;
+    }
+
+    public constructor(private nav: NavController) {}
+
+    public onClickAbout(): void {
+        this.nav.push(AboutPage);
     }
 }
