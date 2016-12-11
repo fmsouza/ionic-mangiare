@@ -1,18 +1,23 @@
+import { TABS } from '../components';
 import {Component, ViewChild} from '@angular/core';
 import {Nav, Platform} from 'ionic-angular';
 import {Splashscreen, StatusBar} from 'ionic-native';
-import {DEFAULT_PAGE, DrawerLinks, MenuItem} from '../components';
 import strings from '../strings/index';
 
 @Component({
-    templateUrl: 'app.template.html'
+    template: `
+        <ion-tabs color="white">
+            <ion-tab [tabIcon]="tab.icon" [tabTitle]="tab.title" [root]="tab.component" *ngFor="let tab of tabs"></ion-tab>
+        </ion-tabs>
+    `
 })
 export class Application {
+
     // the root nav is a child of the root app component
     // @ViewChild(Nav) gets a reference to the app's root nav
     @ViewChild(Nav) public nav: Nav;
 
-    public rootPage: any = DEFAULT_PAGE;
+    public tabs: any[] = TABS;
 
     public get Text(): any {
         return strings;
@@ -21,7 +26,7 @@ export class Application {
     // List of pages that can be navigated to from the left menu
     // the left menu only works after login
     // the login page disables the left menu
-    public pages: MenuItem[] = DrawerLinks;
+    // public pages: MenuItem[] = DrawerLinks;
 
     public constructor(platform: Platform) {
         platform.ready().then(() => this.onReady());
@@ -31,19 +36,7 @@ export class Application {
         // Okay, so the platform is ready and our plugins are available.
         // Here you can do any higher level native things you might need.
         StatusBar.styleDefault();
+        StatusBar.backgroundColorByHexString('#FFFFFF');
         Splashscreen.hide();
-    }
-
-    /**
-     * Opens a given page
-     * @param {MenuItem} page - Clicked page item
-     * @return {void}
-     */
-    public openPage(page: MenuItem): void {
-        if (page.component) {
-            if (!page.home) this.nav.push(page.component);
-            else this.rootPage = page.component;
-        } else if (page.link) window.open(page.link, '_system');
-        else if (page.action) page.action();
     }
 }

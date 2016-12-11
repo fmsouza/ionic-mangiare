@@ -1,7 +1,7 @@
 import { browser, element, by } from 'protractor';
 declare var describe, beforeEach, it, expect;
 
-describe('HomePage', () => {
+describe('ChatsPage', () => {
 
   beforeEach(() => browser.get(''));
 

@@ -1,21 +1,16 @@
-import {HomePage} from './pages/home/page';
+import { SettingsPage } from './pages/settings/page';
+import { ChatsPage } from './pages/chats/page';
+import { CardsPage } from './pages/cards/page';
 import strings from './strings';
 
-export interface MenuItem {
-    title: string;
-    icon: string;
-    component?: any;
-    link?: string;
-    action?: Function;
-    home?: boolean;
-}
-
-export const DEFAULT_PAGE: any = HomePage;
-
-export const Components: any = [
-    HomePage,
+export const TABS: any[] = [
+    { icon: 'albums', title: strings.TAB_CARDS, component: CardsPage },
+    { icon: 'chatbubbles', title: strings.TAB_CHATS, component: ChatsPage },
+    { icon: 'settings', title: strings.TAB_SETTINGS, component: SettingsPage }
 ];
 
-export const DrawerLinks: MenuItem[] = [
-    { title: strings.MENU_OPTION_HOME, icon: 'home', component: HomePage, home: true },
+export const Components: any = [
+    CardsPage,
+    ChatsPage,
+    SettingsPage
 ];

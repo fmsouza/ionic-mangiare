@@ -1,12 +1,12 @@
-import { HomePage } from './page';
+import { CardsPage } from './page';
 
 declare var describe, beforeEach, it, expect;
 
-describe("HomePage", () => {
+describe("CardsPage", () => {
 
-    let page: HomePage;
+    let page: CardsPage;
 
-    beforeEach(() => page = new HomePage());
+    beforeEach(() => page = new CardsPage());
 
     it("should contain 'Hello world!' in 'content' property", () => {
         expect(page.Text.PAGE_HOME_CONTENT).toEqual("Hello world!");

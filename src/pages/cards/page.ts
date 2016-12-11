@@ -5,16 +5,13 @@ import { StackConfig, ThrowEvent, DragEvent, SwingStackComponent, SwingCardCompo
 /**
  * HomePage class is the Home view controller
  * 
- * @class {HomePage}
+ * @class {CardsPage}
  */
 @Component({
     template: `
         <ion-header no-shadow>
             <ion-navbar color="white">
-                <button ion-button menuToggle>
-                    <ion-icon name="menu"></ion-icon>
-                </button>
-                <ion-title>{{ Text.PAGE_HOME_TITLE }}</ion-title>
+                <ion-title>{{ Text.PAGE_CARDS_TITLE }}</ion-title>
             </ion-navbar>
         </ion-header>
 
@@ -33,7 +30,7 @@ import { StackConfig, ThrowEvent, DragEvent, SwingStackComponent, SwingCardCompo
         </ion-content>
         `,
 })
-export class HomePage {
+export class CardsPage {
 
     public get Text(): any {
         return strings;
