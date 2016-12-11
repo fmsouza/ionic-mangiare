@@ -1,11 +1,11 @@
 {
-  "name": "ionic2-seed",
+  "name": "mangiare",
   "version": "1.0.0",
-  "description": "Ionic2 seed",
+  "description": "Matches people which wants to eat something with other people wanting to eat the same thing or wanting to cook that thing.",
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/fmsouza/ionic2-seed.git"
+    "url": "https://github.com/fmsouza/mangiare.git"
   },
   "scripts": {
     "postinstall": "ionic build && ionic state restore",

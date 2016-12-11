@@ -1,6 +1,9 @@
-# Ionic 2 seed
+# Mangiare
 
-This is a seed of Ionic 2 with TypeScript + Karma + Protractor.
+Mangiare is an app made to match people which wants to eat something with other people wanting to eat the same thing or wanting to cook that thing.
+It was inpired in a joke published in Twitter by a brazilian user asking for an app like this.
+
+This project is based on Ionic 2 with TypeScript + Karma + Protractor.
 
 ## Table of Contents
  - [Getting Started](#getting-started)
@@ -55,4 +58,4 @@ npm run e2e
 ```
 
 ## Contribute
-Issues and PRs are welcome, see the [issues list](https://github.com/fmsouza/ionic2-seed/issues).
+Issues and PRs are welcome, see the [issues list](https://github.com/fmsouza/mangiare/issues).
