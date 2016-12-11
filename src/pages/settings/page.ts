@@ -27,40 +27,40 @@ import strings from '../../strings';
                     <ion-icon name="log-out" item-right></ion-icon>
                 </ion-item>
                 <ion-list-header>
-                    Usuário
+                    {{ Text.PAGE_SETTINGS_USER }}
                 </ion-list-header>
                 <ion-item>
                     <ion-icon name="person" item-left></ion-icon>
-                    Perfil
+                    {{ Text.PAGE_SETTINGS_PROFILE }}
                 </ion-item>
                 <ion-item>
                     <ion-icon name="map" item-left></ion-icon>
-                    Endereço
+                    {{ Text.PAGE_SETTINGS_ADDRESS }}
                 </ion-item>
                 <ion-item>
                     <ion-icon name="card" item-left></ion-icon>
-                    Cartões de crédito
+                    {{ Text.PAGE_SETTINGS_CREDITCARD }}
                 </ion-item>
                 <ion-list-header>
-                    Sistema
+                    {{ Text.PAGE_SETTINGS_SYSTEM }}
                 </ion-list-header>
                 <ion-item>
                     <ion-icon name="megaphone" item-left></ion-icon>
-                    <ion-label>Ativar sons</ion-label>
+                    <ion-label>{{ Text.PAGE_SETTINGS_SOUNDS }}</ion-label>
                     <ion-toggle></ion-toggle>
                 </ion-item>
                 <ion-item>
                     <ion-icon name="notifications" item-left></ion-icon>
-                    <ion-label>Receber notificações</ion-label>
+                    <ion-label>{{ Text.PAGE_SETTINGS_NOTIFICATIONS }}</ion-label>
                     <ion-toggle></ion-toggle>
                 </ion-item>
                 <ion-item (click)="onClickAbout()">
                     <ion-icon name="help-circle" item-left></ion-icon>
-                    Sobre
+                    {{ Text.PAGE_SETTINGS_ABOUT }}
                 </ion-item>
                 <ion-item>
                     <ion-icon name="document" item-left></ion-icon>
-                    Termos de Uso
+                    {{ Text.PAGE_SETTINGS_TERMS }}
                 </ion-item>
             </ion-list>
         </ion-content>

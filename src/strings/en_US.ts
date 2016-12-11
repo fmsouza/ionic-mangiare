@@ -6,6 +6,15 @@ export const TAB_CHATS: string = 'Chats';
 
 export const PAGE_SETTINGS_TITLE: string = 'Other stuff';
 export const TAB_SETTINGS: string = 'Others';
+export const PAGE_SETTINGS_USER: string = 'User';
+export const PAGE_SETTINGS_PROFILE: string = 'Profile';
+export const PAGE_SETTINGS_ADDRESS: string = 'Address';
+export const PAGE_SETTINGS_CREDITCARD: string = 'Credit card';
+export const PAGE_SETTINGS_SYSTEM: string = 'System';
+export const PAGE_SETTINGS_SOUNDS: string = 'Enable sounds';
+export const PAGE_SETTINGS_NOTIFICATIONS: string = 'Enable notifications';
+export const PAGE_SETTINGS_ABOUT: string = 'About the app';
+export const PAGE_SETTINGS_TERMS: string = 'Use terms';
 
 export const PAGE_ABOUT_TITLE: string = 'About the app';
 export const PAGE_ABOUT_CONTENT: string = `
