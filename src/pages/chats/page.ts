@@ -1,4 +1,6 @@
 import {Component} from '@angular/core';
+import {NavController} from 'ionic-angular';
+import {ChatPage} from '../chat/page';
 import strings from '../../strings';
 
 /**
@@ -16,7 +18,7 @@ import strings from '../../strings';
 
         <ion-content padding class="chats">
             <ion-list>
-                <ion-item *ngFor="let chat of chats">
+                <ion-item *ngFor="let chat of chats" (click)="onClickChat(chat)">
                     <ion-avatar item-left>
                         <img src="{{chat.avatar}}">
                     </ion-avatar>
@@ -41,5 +43,11 @@ export class ChatsPage {
 
     public get Text(): any {
         return strings;
+    }
+
+    public constructor(private nav: NavController) {}
+
+    public onClickChat(chat: any): void {
+        this.nav.push(ChatPage, chat);
     }
 }

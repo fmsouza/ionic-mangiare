@@ -1,4 +1,5 @@
 import { SettingsPage } from './pages/settings/page';
+import { ChatPage } from './pages/chat/page';
 import { ChatsPage } from './pages/chats/page';
 import { CardsPage } from './pages/cards/page';
 import { AboutPage } from './pages/about/page';
@@ -12,6 +13,7 @@ export const TABS: any[] = [
 
 export const Components: any = [
     CardsPage,
+    ChatPage,
     ChatsPage,
     SettingsPage,
     AboutPage
