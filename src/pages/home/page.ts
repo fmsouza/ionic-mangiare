@@ -26,8 +26,7 @@ import { StackConfig, ThrowEvent, DragEvent, SwingStackComponent, SwingCardCompo
                         <ion-card-title>
                             {{c.name}}
                         </ion-card-title>
-                            <p>{{c.description}}
-                            </p>
+                        <p>Wants to {{c.action}} {{c.plate}}</p>
                     </ion-card-content>
                 </ion-card>
             </ul>
@@ -58,16 +57,14 @@ export class HomePage {
     };
 
     this.cards = [
-      { name: 'Francielle Hemsworth', description: 'Love food and people.', avatar: 'http://lorempixel.com/300/200/people/1' },
-      { name: 'Mirella Presley', description: 'Want to meet you. Are you prepared?', avatar: 'http://lorempixel.com/300/200/people/2' },
-      { name: 'Jumes Sulley', description: 'Interested to cook today.', avatar: 'http://lorempixel.com/300/200/people/3' },
-      { name: 'Carl Livingson', description: 'Wondering if you would like to party.', avatar: 'http://lorempixel.com/300/200/people/4' },
-      { name: 'Pharell Wage', description: 'Needing some alcohol while eating.', avatar: 'http://lorempixel.com/300/200/people/5' },
-      { name: 'Megan June', description: 'Do you like rice and bean? I love it!', avatar: 'http://lorempixel.com/300/200/people/6' },
-      { name: 'Miranda Prisley', description: 'Caught on the best moment!', avatar: 'http://lorempixel.com/300/200/people/7' },
-      { name: 'Caroline Jameson', description: 'Cooking potatoes.', avatar: 'http://lorempixel.com/300/200/people/8' },
-      { name: 'Sandra Be', description: 'Let me be your chef!', avatar: 'http://lorempixel.com/300/200/people/9' },
-      { name: 'Oprah Winfrey', description: 'Do it yourself.', avatar: 'http://lorempixel.com/300/200/people/10' }
+      { name: 'Francielle Hemsworth', action: 'cook', plate: 'strogonoff', avatar: 'http://lorempixel.com/300/200/people/1' },
+      { name: 'Mirella Presley', action: 'eat', plate: 'japanese food', avatar: 'http://lorempixel.com/300/200/people/2' },
+      { name: 'Jumes Sulley', action: 'cook', plate: 'italian food', avatar: 'http://lorempixel.com/300/200/people/3' },
+      { name: 'Carl Livingson', action: 'eat', plate: 'pizza', avatar: 'http://lorempixel.com/300/200/people/4' },
+      { name: 'Pharell Wage', action: 'cook', plate: 'lasagna', avatar: 'http://lorempixel.com/300/200/people/5' },
+      { name: 'Megan June', action: 'eat', plate: 'popcorn', avatar: 'http://lorempixel.com/300/200/people/6' },
+      { name: 'Miranda Prisley', action: 'eat', plate: 'hamburguer', avatar: 'http://lorempixel.com/300/200/people/7' },
+      { name: 'Caroline Jameson', action: 'eat', plate: 'ice cream', avatar: 'http://lorempixel.com/300/200/people/8' }
     ];
   }
 
