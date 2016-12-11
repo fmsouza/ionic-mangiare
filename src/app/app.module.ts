@@ -1,3 +1,5 @@
+import { BrowserModule } from '@angular/platform-browser';
+import { SwingModule } from 'angular2-swing';
 import {Application} from './app.component';
 import {NgModule, ErrorHandler} from '@angular/core';
 import {Storage} from '@ionic/storage';
@@ -20,6 +22,8 @@ const PROVIDERS: any = [
     declarations: COMPONENTS,
     entryComponents: COMPONENTS,
     imports: [
+        BrowserModule,
+        SwingModule,
         IonicModule.forRoot(Application)
     ],
     bootstrap: [IonicApp],

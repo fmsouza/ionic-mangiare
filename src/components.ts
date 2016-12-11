@@ -13,7 +13,7 @@ export interface MenuItem {
 export const DEFAULT_PAGE: any = HomePage;
 
 export const Components: any = [
-    HomePage
+    HomePage,
 ];
 
 export const DrawerLinks: MenuItem[] = [
