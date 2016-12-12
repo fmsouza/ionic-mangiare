@@ -1,4 +1,4 @@
-.stack, .stack ion-card {
+.card-stack .stack, .card-stack .stack ion-card {
     width: 400px;
     max-width: 95%;
     position: absolute;
@@ -6,4 +6,16 @@
     right: 0; 
     margin-left: auto; 
     margin-right: auto; 
+}
+
+.card-stack .stack .stack-buttons {
+    position: absolute;
+    display: flex;
+    top: 390px;
+    left: 30%;
+    right: 30%;
+}
+
+.card-stack .stack .stack-buttons button {
+    flex: 1;
 }

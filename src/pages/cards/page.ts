@@ -1,6 +1,6 @@
 import { Component, ViewChild, ViewChildren, QueryList } from '@angular/core';
 import strings from '../../strings';
-import { StackConfig, ThrowEvent, DragEvent, SwingStackComponent, SwingCardComponent } from 'angular2-swing';
+import { StackConfig, ThrowEvent, SwingStackComponent, SwingCardComponent } from 'angular2-swing';
 
 /**
  * HomePage class is the Home view controller
@@ -15,17 +15,27 @@ import { StackConfig, ThrowEvent, DragEvent, SwingStackComponent, SwingCardCompo
             </ion-navbar>
         </ion-header>
 
-        <ion-content class="home">
+        <ion-content class="card-stack">
             <ul class="stack" swing-stack [stackConfig]="stackConfig" #stack (throwout)="onThrowOut($event)">
-                <ion-card swing-card #cards [ngClass]="c.name" *ngFor="let c of cards">
-                    <img src="{{c.avatar}}"/>
-                    <ion-card-content>
-                        <ion-card-title>
-                            {{c.name}}
-                        </ion-card-title>
-                        <p>Wants to {{c.action}} {{c.plate}}</p>
-                    </ion-card-content>
-                </ion-card>
+                <div *ngFor="let c of cards">
+                    <ion-card #cards swing-card [ngClass]="c.name">
+                        <img src="{{c.avatar}}"/>
+                        <ion-card-content>
+                            <ion-card-title>
+                                {{c.name}}
+                            </ion-card-title>
+                            <p>Wants to {{c.action}} {{c.plate}}</p>
+                        </ion-card-content>
+                    </ion-card>
+                </div>
+                <div class="stack-buttons">
+                    <button ion-button color="secondary" round large (click)="onClickLike()">
+                        <ion-icon name="thumbs-up"></ion-icon>
+                    </button>
+                    <button ion-button color="danger" round large (click)="onClickDislike()">
+                        <ion-icon name="thumbs-down"></ion-icon>
+                    </button>
+                </div>
             </ul>
         </ion-content>
         `,
@@ -38,6 +48,7 @@ export class CardsPage {
 
   @ViewChild('stack') swingStack: SwingStackComponent;
   @ViewChildren('cards') swingCards: QueryList<SwingCardComponent>;
+  private stackTop: number = 0;
 
   cards: Array<any>;
   stackConfig: StackConfig;
@@ -66,33 +77,30 @@ export class CardsPage {
   }
 
   ionViewDidLoad(): void {
-    // ViewChild & ViewChildren are only available
-    // in this function
-
-    console.log(this.swingStack); // this is the stack
-    console.log(this.swingCards); // this is a list of cards
-
-    // we can get the underlying stack
-    // which has methods - createCard, destroyCard, getCard etc
-    console.log(this.swingStack.stack);
-
-    // and the cards
-    // every card has methods - destroy, throwIn, throwOut etc
-    this.swingCards.forEach((c) => console.log(c.getCard()));
-
-    // this is how you can manually hook up to the
-    // events instead of providing the event method in the template
-    this.swingStack.throwoutleft.subscribe(
-      (event: ThrowEvent) => console.log('Manual hook: ', event));
-
-    this.swingStack.dragstart.subscribe((event: DragEvent) => console.log(event));
-
-    this.swingStack.dragmove.subscribe((event: DragEvent) => console.log(event));
+    this.stackTop = this.swingCards.length;
+    this.swingCards.forEach((c) => console.log("get card:", c.getCard()));
   }
 
   // This method is called by hooking up the event
   // on the HTML element - see the template above
-  onThrowOut(event: ThrowEvent) {
-    console.log('Hook from the template', event.throwDirection);
+  public onThrowOut(event: ThrowEvent): void {
+      this.stackTop--;
+      console.log("Card data:", this.cards[this.stackTop]);
+  }
+
+  public onClickLike(): void {
+      let card: any = this.swingCards.toArray()[this.stackTop-1];
+      if (card) {
+        card = card.getCard();
+        card.throwOut(-1, 0);
+      }
+  }
+
+  public onClickDislike(): void {
+    let card: any = this.swingCards.toArray()[this.stackTop-1];
+    if (card) {
+        card = card.getCard();
+        card.throwOut(1, 0);
+    }
   }
 }
