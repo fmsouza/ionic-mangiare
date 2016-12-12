@@ -18,17 +18,17 @@ import strings from '../../strings';
         <ion-content padding class="messages">
             <ion-list no-lines>
                 <ion-item *ngFor="let message of messages">
-                    <div class="me" *ngIf="contactName!==message.user">
-                        <ion-avatar item-right>
-                            <img src="{{message.avatar}}">
-                        </ion-avatar>
-                        <p>{{message.text}}</p>
+                    <div class="message-wrapper them" *ngIf="message.user!=='Brandon Lawrence'">
+                        <div class="circle-wrapper">
+                            <img src="{{message.avatar}}" />
+                        </div>
+                        <div class="text-wrapper">{{message.text}}</div>
                     </div>
-                    <div class="others" *ngIf="contactName===message.user">
-                        <ion-avatar item-left>
-                            <img src="{{message.avatar}}">
-                        </ion-avatar>
-                        <p>{{message.text}}</p>
+                    <div class="message-wrapper me" *ngIf="message.user==='Brandon Lawrence'">
+                        <div class="text-wrapper">{{message.text}}</div>
+                        <div class="circle-wrapper">
+                            <img src="{{message.avatar}}" />
+                        </div>
                     </div>
                 </ion-item>
             </ion-list>
@@ -55,7 +55,7 @@ export class ChatPage {
         { user: this.contactName, avatar: 'http://lorempixel.com/300/200/people/8', text: 'What about you?', timestamp: new Date() },
         { user: 'Brandon Lawrence', avatar: 'http://lorempixel.com/300/200/people/9', text: 'I\'m fine too, thanks!', timestamp: new Date() },
         { user: 'Brandon Lawrence', avatar: 'http://lorempixel.com/300/200/people/9', text: 'Meet you 8 o\'clock ate the bar, ok?', timestamp: new Date() },
-        { user: this.contactName, avatar: 'http://lorempixel.com/300/200/people/8', text: 'Fine, see you there!', timestamp: new Date() },
+        { user: this.contactName, avatar: 'http://lorempixel.com/300/200/people/8', text: 'Fine, see you there! Hope I will not get late. I\'ll be in touch with you :)', timestamp: new Date() },
     ];
 
     public get Text(): any {

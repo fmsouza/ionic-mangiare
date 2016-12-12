@@ -13,3 +13,74 @@
 .messages-footer ion-card ion-input {
     padding-left: 5px;
 }
+
+.message-wrapper {
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+}
+
+.message-wrapper.them {
+   flex-direction: row;
+   justify-content: flex-start;
+}
+
+.message-wrapper.me {
+   flex-direction: row;
+   justify-content: flex-end;
+}
+
+.message-wrapper .circle-wrapper, .message-wrapper .circle-wrapper img {
+  height: 42px;
+  width: 42px;
+  border-radius: 50%;
+}
+
+.message-wrapper .text-wrapper {
+  padding: 10px;
+  min-height: 42px;
+  width: 60%;
+  margin: 0 10px;
+  box-shadow: 0px 1px 0px 0px rgba(50, 50, 50, 0.3);
+  border-radius: 2px;
+  font-weight: 500;
+  position: relative;
+  word-break: break-all;
+}
+
+.message-wrapper .text-wrapper:before {
+  content: '';
+  width: 0;
+  height: 0;
+  border-style: solid;
+}
+
+.message-wrapper.them .circle-wrapper, .message-wrapper.them .text-wrapper {
+  background: #FFFEFD;
+  color: #333333;
+}
+
+.message-wrapper.them .text-wrapper:before {
+  border-width: 0 10px 10px 0;
+  border-color: transparent #FFFEFD transparent transparent;
+  position: absolute;
+  top: 0;
+  left: -9px;
+}
+
+.message-wrapper.me .circle-wrapper, .message-wrapper.me .text-wrapper {
+  background: #D3FCD2;
+  color: #333333;
+}
+
+.message-wrapper.me .text-wrapper {
+  background: #D3FCD2;
+}
+
+.message-wrapper.me .text-wrapper:before {
+  border-width: 10px 10px 0 0;
+  border-color: #D3FCD2 transparent transparent transparent;
+  position: absolute;
+  top: 0;
+  right: -9px;
+}
