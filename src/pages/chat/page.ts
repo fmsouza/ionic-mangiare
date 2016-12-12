@@ -36,7 +36,7 @@ import strings from '../../strings';
         </ion-content>
         <ion-footer no-shadow class="messages-footer">
             <ion-card>
-                <ion-input type="text" placeholder="Place your message..." value=""></ion-input>
+                <ion-input type="text" [placeholder]="Text.PAGE_CHAT_MESSAGEBOX" value=""></ion-input>
                 <button color="dark" ion-button icon-only clear round>
                     <ion-icon name="send"></ion-icon>
                 </button>
