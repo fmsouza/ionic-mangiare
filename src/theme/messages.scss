@@ -1,5 +1,5 @@
 .messages {
-    background: url('/assets/images/bg_messages.png');
+    background: url('../assets/imgs/bg_messages.png');
 }
 
 .messages ion-item {
@@ -8,4 +8,8 @@
 
 .messages-footer ion-card {
     display: flex;
+}
+
+.messages-footer ion-card ion-input {
+    padding-left: 5px;
 }
