@@ -4,6 +4,8 @@ export const TAB_CARDS: string = 'People';
 export const PAGE_CHATS_TITLE: string = 'Chats';
 export const TAB_CHATS: string = 'Chats';
 
+export const PAGE_CHAT_MESSAGEBOX: string = 'Place your message...';
+
 export const PAGE_SETTINGS_TITLE: string = 'Other stuff';
 export const TAB_SETTINGS: string = 'Others';
 export const PAGE_SETTINGS_USER: string = 'User';
