@@ -1,7 +1,7 @@
-import { TABS } from '../components';
-import {Component, ViewChild} from '@angular/core';
-import {Nav, Platform} from 'ionic-angular';
+import {Component} from '@angular/core';
+import {Platform} from 'ionic-angular';
 import {Splashscreen, StatusBar} from 'ionic-native';
+import {TABS} from '../components';
 import strings from '../strings/index';
 
 @Component({
@@ -12,10 +12,6 @@ import strings from '../strings/index';
     `
 })
 export class Application {
-
-    // the root nav is a child of the root app component
-    // @ViewChild(Nav) gets a reference to the app's root nav
-    @ViewChild(Nav) public nav: Nav;
 
     public tabs: any[] = TABS;
 
