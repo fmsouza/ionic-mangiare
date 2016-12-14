@@ -1,3 +1,4 @@
+import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { SwingModule } from 'angular2-swing';
 import {Application} from './app.component';
@@ -23,6 +24,7 @@ const PROVIDERS: any = [
     entryComponents: COMPONENTS,
     imports: [
         BrowserModule,
+        FormsModule,
         SwingModule,
         IonicModule.forRoot(Application)
     ],

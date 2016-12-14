@@ -27,12 +27,19 @@ import strings from '../../strings';
             </div>
         </ion-content>
         <ion-footer no-shadow class="messages-footer">
-            <ion-card>
-                <ion-input type="text" [placeholder]="Text.PAGE_CHAT_MESSAGEBOX" value=""></ion-input>
-                <button color="dark" ion-button icon-only clear round>
-                    <ion-icon name="send"></ion-icon>
-                </button>
-            </ion-card>
+            <form (submit)="onSendMessage()">
+                <ion-card>
+                    <ion-input
+                        type="text"
+                        [(ngModel)]="currentMessage"
+                        name="currentMessage"
+                        [placeholder]="Text.PAGE_CHAT_MESSAGEBOX">
+                    </ion-input>
+                    <button type="submit" color="dark" ion-button icon-only clear round>
+                        <ion-icon name="send"></ion-icon>
+                    </button>
+                </ion-card>
+            </form>
         </ion-footer>
         `,
 })
@@ -42,6 +49,8 @@ export class ChatPage {
 
     private chatId: string;
     public contactName: string = '';
+
+    public currentMessage: string = '';
 
     public messages: any[] = [
         { user: 'Brandon Lawrence', avatar: 'http://lorempixel.com/300/200/people/9', text: 'Hey! What\'s up?', timestamp: new Date() },
@@ -92,6 +101,17 @@ export class ChatPage {
     }
 
     public ionViewDidEnter(): void {
+        this.jumpToBottom();
+    }
+
+    public onSendMessage(): void {
+        let newMsg = { user: 'Brandon Lawrence', avatar: 'http://lorempixel.com/300/200/people/9', text: this.currentMessage, timestamp: new Date() };
+        this.messages.push(newMsg);
+        this.currentMessage = '';
+        setTimeout(() => this.jumpToBottom(), 1);
+    }
+
+    private jumpToBottom(): void {
         this.content.scrollToBottom(1);
     }
 }
