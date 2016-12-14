@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {NavController} from 'ionic-angular';
+import {App} from 'ionic-angular';
 import {ChatPage} from '../chat/page';
 import strings from '../../strings';
 
@@ -45,9 +45,9 @@ export class ChatsPage {
         return strings;
     }
 
-    public constructor(private nav: NavController) {}
+    public constructor(private app: App) {}
 
     public onClickChat(chat: any): void {
-        this.nav.push(ChatPage, chat);
+        this.app.getRootNav().push(ChatPage, chat);
     }
 }

@@ -1,23 +1,14 @@
+import { DEFAULT_PAGE } from '../components';
 import {Component} from '@angular/core';
 import {Platform} from 'ionic-angular';
 import {Splashscreen, StatusBar} from 'ionic-native';
-import {TABS} from '../components';
-import strings from '../strings/index';
 
 @Component({
-    template: `
-        <ion-tabs color="white">
-            <ion-tab [tabIcon]="tab.icon" [tabTitle]="tab.title" [root]="tab.component" *ngFor="let tab of tabs"></ion-tab>
-        </ion-tabs>
-    `
+    template: `<ion-nav #rootNav [root]="rootPage"></ion-nav>`
 })
 export class Application {
 
-    public tabs: any[] = TABS;
-
-    public get Text(): any {
-        return strings;
-    }
+    public rootPage: any = DEFAULT_PAGE;
 
     // List of pages that can be navigated to from the left menu
     // the left menu only works after login
