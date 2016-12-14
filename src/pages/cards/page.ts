@@ -78,14 +78,12 @@ export class CardsPage {
 
   ionViewDidLoad(): void {
     this.stackTop = this.swingCards.length;
-    this.swingCards.forEach((c) => console.log("get card:", c.getCard()));
   }
 
   // This method is called by hooking up the event
   // on the HTML element - see the template above
   public onThrowOut(event: ThrowEvent): void {
       this.stackTop--;
-      console.log("Card data:", this.cards[this.stackTop]);
   }
 
   public onClickLike(): void {
