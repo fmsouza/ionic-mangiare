@@ -10,8 +10,7 @@ export const PAGE_SETTINGS_TITLE: string = 'Other stuff';
 export const TAB_SETTINGS: string = 'Others';
 export const PAGE_SETTINGS_USER: string = 'User';
 export const PAGE_SETTINGS_PROFILE: string = 'Profile';
-export const PAGE_SETTINGS_ADDRESS: string = 'Address';
-export const PAGE_SETTINGS_CREDITCARD: string = 'Credit card';
+export const PAGE_SETTINGS_CREDITCARD: string = 'Payment';
 export const PAGE_SETTINGS_SYSTEM: string = 'System';
 export const PAGE_SETTINGS_SOUNDS: string = 'Enable sounds';
 export const PAGE_SETTINGS_NOTIFICATIONS: string = 'Enable notifications';
@@ -27,3 +26,5 @@ export const PAGE_TERMS_TITLE: string = 'Use Terms';
 export const PAGE_TERMS_CONTENT: string = `
     <h1>Aqui vai o conteúdo</h1>
 `;
+
+export const PAGE_PROFILE_TITLE: string = 'Profile';

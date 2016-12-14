@@ -1,3 +1,4 @@
+import { ProfilePage } from './pages/profile/page';
 import { TermsPage } from './pages/terms/page';
 import { TabsPage } from './pages/tabs/page';
 import { SettingsPage } from './pages/settings/page';
@@ -20,6 +21,7 @@ export const Components: any = [
     CardsPage,
     ChatPage,
     ChatsPage,
+    ProfilePage,
     SettingsPage,
     TabsPage,
     TermsPage,

@@ -1,7 +1,8 @@
-import { TermsPage } from './../terms/page';
 import {Component} from '@angular/core';
 import { App, NavController } from 'ionic-angular';
-import {AboutPage} from '../about/page';
+import { ProfilePage } from '../profile/page';
+import { TermsPage } from '../terms/page';
+import { AboutPage } from '../about/page';
 import strings from '../../strings';
 
 /**
@@ -30,13 +31,9 @@ import strings from '../../strings';
                 <ion-list-header>
                     {{ Text.PAGE_SETTINGS_USER }}
                 </ion-list-header>
-                <ion-item>
+                <ion-item (click)="onClickProfile()">
                     <ion-icon name="person" item-left></ion-icon>
                     {{ Text.PAGE_SETTINGS_PROFILE }}
-                </ion-item>
-                <ion-item>
-                    <ion-icon name="map" item-left></ion-icon>
-                    {{ Text.PAGE_SETTINGS_ADDRESS }}
                 </ion-item>
                 <ion-item>
                     <ion-icon name="card" item-left></ion-icon>
@@ -81,6 +78,10 @@ export class SettingsPage {
 
     public onClickAbout(): void {
         this.nav.push(AboutPage);
+    }
+
+    public onClickProfile(): void {
+        this.nav.push(ProfilePage);
     }
 
     public onClickTerms(): void {
