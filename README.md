@@ -6,6 +6,7 @@ It was inpired in a joke published in Twitter by a brazilian user asking for an 
 This project is based on Ionic 2 with TypeScript + Karma + Protractor.
 
 ## Table of Contents
+ - [Screenshots](#screenshots)
  - [Getting Started](#getting-started)
  - [Run in browser](#run-in-browser)
  - [Run in Android](#run-in-android)
@@ -13,6 +14,17 @@ This project is based on Ionic 2 with TypeScript + Karma + Protractor.
  - [Run Unit Tests](#run-unit-tests)
  - [Run E2E](#run-e2e)
  - [Contribute](#contribute)
+
+## Screenshots
+
+<p align="center">
+    <img src="screenshots/cards.png" alt="Cards view" />
+    <img src="screenshots/cards-swing.png" alt="Cards swinging" />
+    <img src="screenshots/chats.png" alt="Chats" />
+    <br/><br/>
+    <img src="screenshots/chatview.png" alt="Chat view" />
+    <img src="screenshots/settings.png" alt="Settings pane" />
+</p>
 
 ## Getting Started
 
