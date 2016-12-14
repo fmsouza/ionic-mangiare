@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {NavController} from 'ionic-angular';
+import { App, NavController } from 'ionic-angular';
 import {AboutPage} from '../about/page';
 import strings from '../../strings';
 
@@ -68,11 +68,15 @@ import strings from '../../strings';
 })
 export class SettingsPage {
 
+    private nav: NavController;
+
     public get Text(): any {
         return strings;
     }
 
-    public constructor(private nav: NavController) {}
+    public constructor(app: App) {
+        this.nav = app.getRootNav();
+    }
 
     public onClickAbout(): void {
         this.nav.push(AboutPage);

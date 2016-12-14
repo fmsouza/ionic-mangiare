@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {App} from 'ionic-angular';
+import { App, NavController } from 'ionic-angular';
 import {ChatPage} from '../chat/page';
 import strings from '../../strings';
 
@@ -33,6 +33,8 @@ import strings from '../../strings';
 })
 export class ChatsPage {
 
+    private nav: NavController;
+
     public chats: any[] = [
       { name: 'Francielle Hemsworth', avatar: 'http://lorempixel.com/300/200/people/1', lastMessage: 'Yeah, it would be awesome!', unread: 0 },
       { name: 'Mirella Presley', avatar: 'http://lorempixel.com/300/200/people/2', lastMessage: 'Nah, I don\'t think so...', unread: 2 },
@@ -45,9 +47,11 @@ export class ChatsPage {
         return strings;
     }
 
-    public constructor(private app: App) {}
+    public constructor(app: App) {
+        this.nav = app.getRootNav();
+    }
 
     public onClickChat(chat: any): void {
-        this.app.getRootNav().push(ChatPage, chat);
+        this.nav.push(ChatPage, chat);
     }
 }
