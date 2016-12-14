@@ -16,23 +16,15 @@ import strings from '../../strings';
         </ion-header>
 
         <ion-content padding class="messages">
-            <ion-list no-lines>
-                <ion-item *ngFor="let message of messages">
-                    <div class="message-wrapper them" *ngIf="message.user!=='Brandon Lawrence'">
-                        <div class="circle-wrapper">
-                            <img src="{{message.avatar}}" />
-                        </div>
-                        <div class="text-wrapper">{{message.text}}</div>
+            <div *ngFor="let message of messages">
+                <div class="message-wrapper {{ (message.user==='Brandon Lawrence')? 'me':'them' }}">
+                    <div class="text-wrapper" *ngIf="message.user==='Brandon Lawrence'">{{message.text}}</div>
+                    <div class="circle-wrapper">
+                        <img src="{{message.avatar}}" />
                     </div>
-                    <div class="message-wrapper me" *ngIf="message.user==='Brandon Lawrence'">
-                        <div class="text-wrapper">{{message.text}}</div>
-                        <div class="circle-wrapper">
-                            <img src="{{message.avatar}}" />
-                        </div>
-                    </div>
-                </ion-item>
-            </ion-list>
-            
+                    <div class="text-wrapper" *ngIf="message.user!=='Brandon Lawrence'">{{message.text}}</div>
+                </div>
+            </div>
         </ion-content>
         <ion-footer no-shadow class="messages-footer">
             <ion-card>
@@ -50,6 +42,36 @@ export class ChatPage {
     public contactName: string = '';
 
     public messages: any[] = [
+        { user: 'Brandon Lawrence', avatar: 'http://lorempixel.com/300/200/people/9', text: 'Hey! What\'s up?', timestamp: new Date() },
+        { user: this.contactName, avatar: 'http://lorempixel.com/300/200/people/8', text: 'Hey! Everything is ok here.', timestamp: new Date() },
+        { user: this.contactName, avatar: 'http://lorempixel.com/300/200/people/8', text: 'What about you?', timestamp: new Date() },
+        { user: 'Brandon Lawrence', avatar: 'http://lorempixel.com/300/200/people/9', text: 'I\'m fine too, thanks!', timestamp: new Date() },
+        { user: 'Brandon Lawrence', avatar: 'http://lorempixel.com/300/200/people/9', text: 'Meet you 8 o\'clock ate the bar, ok?', timestamp: new Date() },
+        { user: this.contactName, avatar: 'http://lorempixel.com/300/200/people/8', text: 'Fine, see you there! Hope I will not get late. I\'ll be in touch with you :)', timestamp: new Date() },
+        { user: 'Brandon Lawrence', avatar: 'http://lorempixel.com/300/200/people/9', text: 'Hey! What\'s up?', timestamp: new Date() },
+        { user: this.contactName, avatar: 'http://lorempixel.com/300/200/people/8', text: 'Hey! Everything is ok here.', timestamp: new Date() },
+        { user: this.contactName, avatar: 'http://lorempixel.com/300/200/people/8', text: 'What about you?', timestamp: new Date() },
+        { user: 'Brandon Lawrence', avatar: 'http://lorempixel.com/300/200/people/9', text: 'I\'m fine too, thanks!', timestamp: new Date() },
+        { user: 'Brandon Lawrence', avatar: 'http://lorempixel.com/300/200/people/9', text: 'Meet you 8 o\'clock ate the bar, ok?', timestamp: new Date() },
+        { user: this.contactName, avatar: 'http://lorempixel.com/300/200/people/8', text: 'Fine, see you there! Hope I will not get late. I\'ll be in touch with you :)', timestamp: new Date() },
+        { user: 'Brandon Lawrence', avatar: 'http://lorempixel.com/300/200/people/9', text: 'Hey! What\'s up?', timestamp: new Date() },
+        { user: this.contactName, avatar: 'http://lorempixel.com/300/200/people/8', text: 'Hey! Everything is ok here.', timestamp: new Date() },
+        { user: this.contactName, avatar: 'http://lorempixel.com/300/200/people/8', text: 'What about you?', timestamp: new Date() },
+        { user: 'Brandon Lawrence', avatar: 'http://lorempixel.com/300/200/people/9', text: 'I\'m fine too, thanks!', timestamp: new Date() },
+        { user: 'Brandon Lawrence', avatar: 'http://lorempixel.com/300/200/people/9', text: 'Meet you 8 o\'clock ate the bar, ok?', timestamp: new Date() },
+        { user: this.contactName, avatar: 'http://lorempixel.com/300/200/people/8', text: 'Fine, see you there! Hope I will not get late. I\'ll be in touch with you :)', timestamp: new Date() },
+        { user: 'Brandon Lawrence', avatar: 'http://lorempixel.com/300/200/people/9', text: 'Hey! What\'s up?', timestamp: new Date() },
+        { user: this.contactName, avatar: 'http://lorempixel.com/300/200/people/8', text: 'Hey! Everything is ok here.', timestamp: new Date() },
+        { user: this.contactName, avatar: 'http://lorempixel.com/300/200/people/8', text: 'What about you?', timestamp: new Date() },
+        { user: 'Brandon Lawrence', avatar: 'http://lorempixel.com/300/200/people/9', text: 'I\'m fine too, thanks!', timestamp: new Date() },
+        { user: 'Brandon Lawrence', avatar: 'http://lorempixel.com/300/200/people/9', text: 'Meet you 8 o\'clock ate the bar, ok?', timestamp: new Date() },
+        { user: this.contactName, avatar: 'http://lorempixel.com/300/200/people/8', text: 'Fine, see you there! Hope I will not get late. I\'ll be in touch with you :)', timestamp: new Date() },
+        { user: 'Brandon Lawrence', avatar: 'http://lorempixel.com/300/200/people/9', text: 'Hey! What\'s up?', timestamp: new Date() },
+        { user: this.contactName, avatar: 'http://lorempixel.com/300/200/people/8', text: 'Hey! Everything is ok here.', timestamp: new Date() },
+        { user: this.contactName, avatar: 'http://lorempixel.com/300/200/people/8', text: 'What about you?', timestamp: new Date() },
+        { user: 'Brandon Lawrence', avatar: 'http://lorempixel.com/300/200/people/9', text: 'I\'m fine too, thanks!', timestamp: new Date() },
+        { user: 'Brandon Lawrence', avatar: 'http://lorempixel.com/300/200/people/9', text: 'Meet you 8 o\'clock ate the bar, ok?', timestamp: new Date() },
+        { user: this.contactName, avatar: 'http://lorempixel.com/300/200/people/8', text: 'Fine, see you there! Hope I will not get late. I\'ll be in touch with you :)', timestamp: new Date() },
         { user: 'Brandon Lawrence', avatar: 'http://lorempixel.com/300/200/people/9', text: 'Hey! What\'s up?', timestamp: new Date() },
         { user: this.contactName, avatar: 'http://lorempixel.com/300/200/people/8', text: 'Hey! Everything is ok here.', timestamp: new Date() },
         { user: this.contactName, avatar: 'http://lorempixel.com/300/200/people/8', text: 'What about you?', timestamp: new Date() },
