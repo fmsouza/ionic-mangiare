@@ -1,3 +1,4 @@
+import { TermsPage } from './pages/terms/page';
 import { TabsPage } from './pages/tabs/page';
 import { SettingsPage } from './pages/settings/page';
 import { ChatPage } from './pages/chat/page';
@@ -21,4 +22,5 @@ export const Components: any = [
     ChatsPage,
     SettingsPage,
     TabsPage,
+    TermsPage,
 ];

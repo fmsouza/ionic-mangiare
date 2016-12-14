@@ -1,3 +1,4 @@
+import { TermsPage } from './../terms/page';
 import {Component} from '@angular/core';
 import { App, NavController } from 'ionic-angular';
 import {AboutPage} from '../about/page';
@@ -58,7 +59,7 @@ import strings from '../../strings';
                     <ion-icon name="help-circle" item-left></ion-icon>
                     {{ Text.PAGE_SETTINGS_ABOUT }}
                 </ion-item>
-                <ion-item>
+                <ion-item (click)="onClickTerms()">
                     <ion-icon name="document" item-left></ion-icon>
                     {{ Text.PAGE_SETTINGS_TERMS }}
                 </ion-item>
@@ -80,5 +81,9 @@ export class SettingsPage {
 
     public onClickAbout(): void {
         this.nav.push(AboutPage);
+    }
+
+    public onClickTerms(): void {
+        this.nav.push(TermsPage);
     }
 }

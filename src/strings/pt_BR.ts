@@ -22,3 +22,8 @@ export const PAGE_ABOUT_TITLE: string = 'Sobre o app';
 export const PAGE_ABOUT_CONTENT: string = `
     <h1>Aqui vai o conteúdo</h1>
 `;
+
+export const PAGE_TERMS_TITLE: string = 'Termos de uso';
+export const PAGE_TERMS_CONTENT: string = `
+    <h1>Aqui vai o conteúdo</h1>
+`;
