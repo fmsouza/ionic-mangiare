@@ -1,5 +1,5 @@
-import {Component} from '@angular/core';
-import {NavParams} from 'ionic-angular';
+import { Component, ViewChild } from '@angular/core';
+import {NavParams, Content} from 'ionic-angular';
 import strings from '../../strings';
 
 /**
@@ -37,6 +37,8 @@ import strings from '../../strings';
         `,
 })
 export class ChatPage {
+
+    @ViewChild(Content) content: Content;
 
     private chatId: string;
     public contactName: string = '';
@@ -87,5 +89,9 @@ export class ChatPage {
     public constructor(params: NavParams) {
         this.chatId = params.get('chatId');
         this.contactName = params.get('name');
+    }
+
+    public ionViewDidEnter(): void {
+        this.content.scrollToBottom(1);
     }
 }
