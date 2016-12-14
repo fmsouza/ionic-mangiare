@@ -17,8 +17,8 @@ import strings from '../../strings';
         </ion-header>
 
         <ion-content padding class="chats">
-            <ion-list>
-                <ion-item *ngFor="let chat of chats" (click)="onClickChat(chat)">
+            <ion-list [virtualScroll]="chats">
+                <ion-item *virtualItem="let chat" (click)="onClickChat(chat)">
                     <ion-avatar item-left>
                         <img src="{{chat.avatar}}">
                     </ion-avatar>
