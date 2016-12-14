@@ -59,3 +59,10 @@ npm run e2e
 
 ## Contribute
 Issues and PRs are welcome, see the [issues list](https://github.com/fmsouza/mangiare/issues).
+
+To send a PR:
+    - Fork the project
+    - Checkout to the branch `dev`
+    - Create a new branch referring to the issue you will solve
+    - Push your new branch to your Fork
+    - Send the Pull Request
