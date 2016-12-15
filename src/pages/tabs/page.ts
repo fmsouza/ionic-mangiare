@@ -1,3 +1,4 @@
+import { App, NavController } from 'ionic-angular';
 import {Component} from '@angular/core';
 import {TABS} from '../../const';
 
@@ -15,5 +16,17 @@ import {TABS} from '../../const';
 })
 export class TabsPage {
 
+    private nav: NavController;
+
     public tabs: any[] = TABS;
+
+    public constructor(app: App) {
+        this.nav = app.getRootNav();
+        document.addEventListener('backbutton', (event) => this.onClickBackButton(event));
+    }
+
+    private onClickBackButton(e: any): void {
+        e.preventDefault();
+        this.nav.pop();
+    }
 }
