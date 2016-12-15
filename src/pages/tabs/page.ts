@@ -27,6 +27,7 @@ export class TabsPage {
 
     private onClickBackButton(e: any): void {
         e.preventDefault();
+        if (!this.nav.getPrevious()) (<any>navigator).app.exitApp();
         this.nav.pop();
     }
 }
