@@ -1,3 +1,4 @@
+import { LoginPage } from './pages/login/page';
 import { ProfilePage } from './pages/profile/page';
 import { TermsPage } from './pages/terms/page';
 import { TabsPage } from './pages/tabs/page';
@@ -8,7 +9,7 @@ import { CardsPage } from './pages/cards/page';
 import { AboutPage } from './pages/about/page';
 import strings from './strings';
 
-export const DEFAULT_PAGE: any = TabsPage;
+export const DEFAULT_PAGE: any = LoginPage;
 export const DEFAULT_LANG: string = 'en-US';
 
 export const TABS: any[] = [
@@ -22,6 +23,7 @@ export const Components: any = [
     CardsPage,
     ChatPage,
     ChatsPage,
+    LoginPage,
     ProfilePage,
     SettingsPage,
     TabsPage,
