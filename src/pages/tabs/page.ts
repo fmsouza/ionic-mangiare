@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {TABS} from '../../components';
+import {TABS} from '../../const';
 
 /**
  * TabsPage class is the Tabs view controller

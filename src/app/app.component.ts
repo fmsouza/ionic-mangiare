@@ -1,4 +1,4 @@
-import { DEFAULT_PAGE } from '../components';
+import { DEFAULT_PAGE } from '../const';
 import {Component} from '@angular/core';
 import {Platform} from 'ionic-angular';
 import {Splashscreen, StatusBar} from 'ionic-native';

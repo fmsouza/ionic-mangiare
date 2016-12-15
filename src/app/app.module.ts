@@ -5,8 +5,7 @@ import {Application} from './app.component';
 import {NgModule, ErrorHandler} from '@angular/core';
 import {Storage} from '@ionic/storage';
 import {IonicApp, IonicModule, IonicErrorHandler} from 'ionic-angular';
-import {Components} from '../components';
-import {Providers} from '../providers';
+import {Components, Providers} from '../const';
 
 const COMPONENTS: any = [
     Application,

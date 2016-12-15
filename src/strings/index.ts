@@ -1,4 +1,4 @@
-import {LANG_DEFAULT} from '../const';
+import {DEFAULT_LANG} from '../const';
 import * as pt_BR from './pt_BR';
 import * as en_US from './en_US';
 
@@ -10,6 +10,6 @@ const mapping: any = {
 };
 
 let strings: any = (Object.keys(mapping).indexOf(navigator.language)>-1)?
-    mapping[navigator.language] : mapping[LANG_DEFAULT];
+    mapping[navigator.language] : mapping[DEFAULT_LANG];
 
 export default strings;
