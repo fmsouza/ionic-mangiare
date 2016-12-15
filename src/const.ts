@@ -13,7 +13,7 @@ export const DEFAULT_PAGE: any = LoginPage;
 export const DEFAULT_LANG: string = 'en-US';
 
 export const TABS: any[] = [
-    { icon: 'albums', title: strings.TAB_CARDS, component: CardsPage },
+    { icon: 'people', title: strings.TAB_CARDS, component: CardsPage },
     { icon: 'chatbubbles', title: strings.TAB_CHATS, component: ChatsPage },
     { icon: 'settings', title: strings.TAB_SETTINGS, component: SettingsPage }
 ];
