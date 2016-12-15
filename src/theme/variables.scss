@@ -82,8 +82,9 @@ $text-wp-color:                           #000;
 // default are overridden.
 
 @import "ionic.theme.default";
-@import "./card-stack";
-@import "./messages";
+
+@import "../pages/cards/theme";
+@import "../pages/chat/theme";
 @import "../pages/login/theme";
 
 // Ionicons
