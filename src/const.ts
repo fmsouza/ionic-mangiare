@@ -31,3 +31,10 @@ export const Components: any = [
 ];
 
 export const Providers: any = [];
+
+export const FACEBOOK_PERMISSIONS: string[] = [
+    'public_profile',
+    'user_about_me',
+    'user_birthday',
+    'user_location',
+];

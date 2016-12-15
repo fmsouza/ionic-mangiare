@@ -1,5 +1,8 @@
+import { SwingModule } from 'angular2-swing';
+import { FACEBOOK_PERMISSIONS } from '../../const';
 import { TabsPage } from '../tabs/page';
-import { NavController } from 'ionic-angular';
+import { AlertController, NavController } from 'ionic-angular';
+import { Facebook } from 'ionic-native';
 import {Component} from '@angular/core';
 import strings from '../../strings';
 
@@ -40,17 +43,32 @@ export class LoginPage {
         return strings;
     }
 
-    public constructor(private nav: NavController) {}
+    public constructor(private nav: NavController, private ctrl: AlertController) {}
 
     public onClickClose(): void {
         this.nav.setRoot(TabsPage);
     }
 
     public onClickButtonFacebook(): void {
-        console.log("Clicked in the Facebook button");
+        Facebook.login(FACEBOOK_PERMISSIONS)
+        .then(response => this.onLoginSuccess(response))
+        .catch(error => this.onLoginError(error));
     }
 
     public onClickButtonGoogle(): void {
         console.log("Clicked in the Google button");
+    }
+
+    public onLoginSuccess(response): void {
+        console.log(JSON.stringify(response));
+        this.nav.setRoot(TabsPage);
+    }
+
+    private onLoginError(error: Error): void {
+        this.ctrl.create({
+            title: 'Login error',
+            subTitle: 'An error ocurred while trying to log in.',
+            buttons: ['Ok']
+        }).present();
     }
 }
