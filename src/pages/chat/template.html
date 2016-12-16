@@ -1,0 +1,32 @@
+<ion-header>
+    <ion-navbar color="white">
+        <ion-title>{{ contactName }}</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding class="messages">
+    <div *ngFor="let message of messages">
+        <div class="message-wrapper {{ (message.user==='Brandon Lawrence')? 'me':'them' }}">
+            <div class="text-wrapper" *ngIf="message.user==='Brandon Lawrence'">{{message.text}}</div>
+            <div class="circle-wrapper">
+                <img src="{{message.avatar}}" />
+            </div>
+            <div class="text-wrapper" *ngIf="message.user!=='Brandon Lawrence'">{{message.text}}</div>
+        </div>
+    </div>
+</ion-content>
+<ion-footer no-shadow class="messages-footer">
+    <form (submit)="onSendMessage()">
+        <ion-card>
+            <ion-input
+                type="text"
+                [(ngModel)]="currentMessage"
+                name="currentMessage"
+                [placeholder]="Text.PAGE_CHAT_MESSAGEBOX">
+            </ion-input>
+            <button type="submit" color="dark" ion-button icon-only clear round>
+                <ion-icon name="send"></ion-icon>
+            </button>
+        </ion-card>
+    </form>
+</ion-footer>

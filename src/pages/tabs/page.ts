@@ -18,15 +18,20 @@ export class TabsPage {
 
     private nav: NavController;
 
-    public tabs: any[] = TABS;
+    public tabs: any[] = TABS; // List of tabs to be displayed in the tab bar
 
     public constructor(app: App) {
         this.nav = app.getRootNav();
-        document.addEventListener('backbutton', (event) => this.onClickBackButton(event));
+        document.addEventListener('backbutton', (event) => this.onClickBackButton(event)); // overwriting back button event
     }
 
-    private onClickBackButton(e: any): void {
-        e.preventDefault();
+    /**
+     * Called when the 'backbutton' event is triggered.
+     * @param {Event} event event object
+     * @return {void}
+     */
+    private onClickBackButton(event: Event): void {
+        event.preventDefault();
         if (!this.nav.getPrevious()) (<any>navigator).app.exitApp();
         this.nav.pop();
     }

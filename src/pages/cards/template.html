@@ -1,0 +1,29 @@
+<ion-header no-shadow>
+    <ion-navbar color="white">
+        <ion-title>{{ Text.PAGE_CARDS_TITLE }}</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content class="card-stack">
+    <ul class="stack" swing-stack [stackConfig]="stackConfig" #stack (throwout)="onThrowOut($event)">
+        <div *ngFor="let c of cards">
+            <ion-card #cards swing-card [ngClass]="c.name">
+                <img src="{{c.avatar}}"/>
+                <ion-card-content>
+                    <ion-card-title>
+                        {{c.name}}
+                    </ion-card-title>
+                    <p>Wants to {{c.action}} {{c.plate}}</p>
+                </ion-card-content>
+            </ion-card>
+        </div>
+        <div class="stack-buttons">
+            <button ion-button color="secondary" round large (click)="onClickLike()">
+                <ion-icon name="thumbs-up"></ion-icon>
+            </button>
+            <button ion-button color="danger" round large (click)="onClickDislike()">
+                <ion-icon name="thumbs-down"></ion-icon>
+            </button>
+        </div>
+    </ul>
+</ion-content>

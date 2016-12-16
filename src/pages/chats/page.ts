@@ -27,7 +27,6 @@ import strings from '../../strings';
                     <ion-badge color="danger" item-right *ngIf="chat.unread > 0">{{chat.unread}}</ion-badge>
                 </ion-item>
             </ion-list>
-            
         </ion-content>
         `,
 })
@@ -51,6 +50,12 @@ export class ChatsPage {
         this.nav = app.getRootNav();
     }
 
+    /**
+     * Triggered when a chat item in the list is clicked.
+     * Takes the user to the chat where he can see the messages.
+     * @param {any} chat Chat identifier object
+     * @return {void}
+     */
     public onClickChat(chat: any): void {
         this.nav.push(ChatPage, chat);
     }

@@ -1,0 +1,22 @@
+<ion-header no-shadow>
+    <ion-navbar color="white">
+        <ion-buttons end>
+            <button ion-button icon-only color="dark" (click)="onClickClose()">
+                <ion-icon name="close"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding class="login">
+    <div class="buttons-container">
+        <button ion-button icon-right clear large full (click)="onClickButtonFacebook()">
+            Entrar com Facebook
+            <ion-icon ios="logo-facebook" md="logo-facebook"></ion-icon>
+        </button>
+        <button ion-button icon-right clear large full color="danger" (click)="onClickButtonGoogle()">
+            Entrar com Google
+            <ion-icon ios="logo-google" md="logo-google"></ion-icon>
+        </button>
+    </div>
+</ion-content>

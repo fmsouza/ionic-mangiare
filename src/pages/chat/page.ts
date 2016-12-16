@@ -7,49 +7,13 @@ import strings from '../../strings';
  * 
  * @class {ChatPage}
  */
-@Component({
-    template: `
-        <ion-header>
-            <ion-navbar color="white">
-                <ion-title>{{ contactName }}</ion-title>
-            </ion-navbar>
-        </ion-header>
-
-        <ion-content padding class="messages">
-            <div *ngFor="let message of messages">
-                <div class="message-wrapper {{ (message.user==='Brandon Lawrence')? 'me':'them' }}">
-                    <div class="text-wrapper" *ngIf="message.user==='Brandon Lawrence'">{{message.text}}</div>
-                    <div class="circle-wrapper">
-                        <img src="{{message.avatar}}" />
-                    </div>
-                    <div class="text-wrapper" *ngIf="message.user!=='Brandon Lawrence'">{{message.text}}</div>
-                </div>
-            </div>
-        </ion-content>
-        <ion-footer no-shadow class="messages-footer">
-            <form (submit)="onSendMessage()">
-                <ion-card>
-                    <ion-input
-                        type="text"
-                        [(ngModel)]="currentMessage"
-                        name="currentMessage"
-                        [placeholder]="Text.PAGE_CHAT_MESSAGEBOX">
-                    </ion-input>
-                    <button type="submit" color="dark" ion-button icon-only clear round>
-                        <ion-icon name="send"></ion-icon>
-                    </button>
-                </ion-card>
-            </form>
-        </ion-footer>
-        `,
-})
+@Component({ templateUrl: 'template.html' })
 export class ChatPage {
 
     @ViewChild(Content) content: Content;
 
     private chatId: string;
     public contactName: string = '';
-
     public currentMessage: string = '';
 
     public messages: any[] = [
@@ -100,10 +64,18 @@ export class ChatPage {
         this.contactName = params.get('name');
     }
 
+    /**
+     * Triggered when the view just entered
+     * @return {void}
+     */
     public ionViewDidEnter(): void {
         this.jumpToBottom();
     }
 
+    /**
+     * Called when the send button is pressed. It send the message to the contact.
+     * @return {void}
+     */
     public onSendMessage(): void {
         let newMsg = { user: 'Brandon Lawrence', avatar: 'http://lorempixel.com/300/200/people/9', text: this.currentMessage, timestamp: new Date() };
         this.messages.push(newMsg);
@@ -111,6 +83,10 @@ export class ChatPage {
         setTimeout(() => this.jumpToBottom(), 1);
     }
 
+    /**
+     * Used to scroll the view to the last message received/sent.
+     * @return {void}
+     */
     private jumpToBottom(): void {
         this.content.scrollToBottom(1);
     }

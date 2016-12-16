@@ -1,10 +1,11 @@
-import {Component} from '@angular/core';
+import { Component } from '@angular/core';
 import { App, NavController } from 'ionic-angular';
 import { LoginPage, TabsPage } from '../';
 import { AuthService } from '../../services';
 
 /**
- * MainPage class is the Main view controller
+ * MainPage class is the Main view controller. It checks for user login
+ * and presents LoginPage or TabsPage depending on current login status.
  * 
  * @class {MainPage}
  */
@@ -29,11 +30,20 @@ export class MainPage {
         this.nav = app.getRootNav();
     }
 
+    /**
+     * Triggered when the view is about to be loaded
+     * @return {void}
+     */
     public ionViewWillLoad(): void {
         this.service.getLoginStatus()
             .then(({status}) => this.onStatusLoaded(status));
     }
 
+    /**
+     * Takes the user to the correct screen based on the login state
+     * @param {string} status Login status
+     * @return {void}
+     */
     private onStatusLoaded(status: string): void {
         switch (status) {
 
@@ -47,10 +57,18 @@ export class MainPage {
         }
     }
 
+    /**
+     * The user is logged in. Avoids login screen and just goes to the Application.
+     * @return {void}
+     */
     private goToApplication(): void {
         this.nav.setRoot(TabsPage);
     }
 
+    /**
+     * The user is not logged in. Takes him to the LoginPage.
+     * @return {void}
+     */
     private goToLogin(): void {
         this.nav.setRoot(LoginPage);
     }
