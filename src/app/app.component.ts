@@ -1,4 +1,4 @@
-import { DEFAULT_PAGE } from '../const';
+import {DEFAULT_PAGE} from '../const';
 import {Component} from '@angular/core';
 import {Platform} from 'ionic-angular';
 import {Splashscreen, StatusBar} from 'ionic-native';
@@ -9,11 +9,6 @@ import {Splashscreen, StatusBar} from 'ionic-native';
 export class Application {
 
     public rootPage: any = DEFAULT_PAGE;
-
-    // List of pages that can be navigated to from the left menu
-    // the left menu only works after login
-    // the login page disables the left menu
-    // public pages: MenuItem[] = DrawerLinks;
 
     public constructor(platform: Platform) {
         platform.ready().then(() => this.onReady());

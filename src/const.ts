@@ -1,3 +1,5 @@
+import { AuthService } from './services/auth';
+import { FacebookService } from './services/facebook';
 import { LoginPage } from './pages/login/page';
 import { ProfilePage } from './pages/profile/page';
 import { TermsPage } from './pages/terms/page';
@@ -18,7 +20,7 @@ export const TABS: any[] = [
     { icon: 'settings', title: strings.TAB_SETTINGS, component: SettingsPage }
 ];
 
-export const Components: any = [
+export const COMPONENTS: any = [
     AboutPage,
     CardsPage,
     ChatPage,
@@ -30,9 +32,22 @@ export const Components: any = [
     TermsPage,
 ];
 
-export const Providers: any = [];
+export const PROVIDERS: any = [
+    FacebookService,
+    AuthService,
+];
+
+export const FACEBOOK_FIELDS: string[] = [
+    'email',
+    'name',
+    'picture',
+    'birthday',
+    'gender',
+    'location'
+];
 
 export const FACEBOOK_PERMISSIONS: string[] = [
+    'email',
     'public_profile',
     'user_about_me',
     'user_birthday',

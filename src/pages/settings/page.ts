@@ -1,5 +1,8 @@
+import { DEFAULT_PAGE } from '../../const';
+import { User } from '../../models/user';
 import {Component} from '@angular/core';
 import { App, NavController } from 'ionic-angular';
+import { AuthService } from '../../services/auth';
 import { ProfilePage } from '../profile/page';
 import { TermsPage } from '../terms/page';
 import { AboutPage } from '../about/page';
@@ -22,11 +25,13 @@ import strings from '../../strings';
             <ion-list>
                 <ion-item>
                     <ion-avatar item-left>
-                        <img src="http://lorempixel.com/100/100/transport">
+                        <img src="{{ user?.avatar }}">
                     </ion-avatar>
-                    <h2>Renato Gonçalves</h2>
-                    <p>renagon@gmail.com</p>
-                    <ion-icon name="log-out" item-right></ion-icon>
+                    <h2>{{ user?.name }}</h2>
+                    <p>{{ user?.email }}</p>
+                    <button ion-button item-right icon-only clear color="dark" (click)="onClickLogout()">
+                        <ion-icon name="log-out"></ion-icon>
+                    </button>
                 </ion-item>
                 <ion-list-header>
                     {{ Text.PAGE_SETTINGS_USER }}
@@ -67,13 +72,24 @@ import strings from '../../strings';
 export class SettingsPage {
 
     private nav: NavController;
+    public user: User;
 
     public get Text(): any {
         return strings;
     }
 
-    public constructor(app: App) {
+    public constructor(private service: AuthService, app: App) {
         this.nav = app.getRootNav();
+    }
+
+    public ionViewWillLoad(): void {
+        this.service.getUser().then(user => this.user = user);
+    }
+
+    public onClickLogout(): void {
+        this.service.logout()
+            .then(() => this.nav.setRoot(DEFAULT_PAGE))
+            .catch(error => console.error(`Logout error: ${JSON.stringify(error)}`));
     }
 
     public onClickAbout(): void {

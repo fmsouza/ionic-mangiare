@@ -1,9 +1,8 @@
-import { SwingModule } from 'angular2-swing';
-import { FACEBOOK_PERMISSIONS } from '../../const';
-import { TabsPage } from '../tabs/page';
+import { User } from '../../models/user';
+import { Component } from '@angular/core';
 import { AlertController, NavController } from 'ionic-angular';
-import { Facebook } from 'ionic-native';
-import {Component} from '@angular/core';
+import { AuthService } from '../../services/auth';
+import { TabsPage } from '../tabs/page';
 import strings from '../../strings';
 
 /**
@@ -25,11 +24,11 @@ import strings from '../../strings';
 
         <ion-content padding class="login">
             <div class="buttons-container">
-                <button ion-button round icon-right clear large full (click)="onClickButtonFacebook()">
+                <button ion-button icon-right clear large full (click)="onClickButtonFacebook()">
                     Entrar com Facebook
                     <ion-icon ios="logo-facebook" md="logo-facebook"></ion-icon>
                 </button>
-                <button ion-button color="danger" round icon-right clear large full (click)="onClickButtonGoogle()">
+                <button ion-button icon-right clear large full color="danger" (click)="onClickButtonGoogle()">
                     Entrar com Google
                     <ion-icon ios="logo-google" md="logo-google"></ion-icon>
                 </button>
@@ -43,15 +42,15 @@ export class LoginPage {
         return strings;
     }
 
-    public constructor(private nav: NavController, private ctrl: AlertController) {}
+    public constructor(private nav: NavController, private service: AuthService, private ctrl: AlertController) {}
 
     public onClickClose(): void {
         this.nav.setRoot(TabsPage);
     }
 
     public onClickButtonFacebook(): void {
-        Facebook.login(FACEBOOK_PERMISSIONS)
-        .then(response => this.onLoginSuccess(response))
+        this.service.loginWithFacebook()
+        .then(user => this.onLoginSuccess(user))
         .catch(error => this.onLoginError(error));
     }
 
@@ -59,8 +58,7 @@ export class LoginPage {
         console.log("Clicked in the Google button");
     }
 
-    public onLoginSuccess(response): void {
-        console.log(JSON.stringify(response));
+    public onLoginSuccess(user: User): void {
         this.nav.setRoot(TabsPage);
     }
 

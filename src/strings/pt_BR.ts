@@ -52,3 +52,7 @@ export const PAGE_TERMS_CONTENT: string = `
 `;
 
 export const PAGE_PROFILE_TITLE: string = 'Perfil';
+
+export const GENDER_MALE: string = 'homem';
+export const GENDER_FEMALE: string = 'mulher';
+export const GENDER_UNKNOWN: string = 'não informado';

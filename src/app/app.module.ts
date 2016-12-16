@@ -5,21 +5,10 @@ import {Application} from './app.component';
 import {NgModule, ErrorHandler} from '@angular/core';
 import {Storage} from '@ionic/storage';
 import {IonicApp, IonicModule, IonicErrorHandler} from 'ionic-angular';
-import {Components, Providers} from '../const';
-
-const COMPONENTS: any = [
-    Application,
-    ...Components
-];
-
-const PROVIDERS: any = [
-    {provide: ErrorHandler, useClass: IonicErrorHandler},
-    Storage,
-    ...Providers
-];
+import {COMPONENTS, PROVIDERS} from '../const';
 
 @NgModule({
-    declarations: COMPONENTS,
+    declarations: [ Application, ...COMPONENTS],
     entryComponents: COMPONENTS,
     imports: [
         BrowserModule,
@@ -28,6 +17,10 @@ const PROVIDERS: any = [
         IonicModule.forRoot(Application)
     ],
     bootstrap: [IonicApp],
-    providers: PROVIDERS
+    providers: [
+        {provide: ErrorHandler, useClass: IonicErrorHandler},
+        Storage,
+        ...PROVIDERS
+    ]
 })
 export class AppModule {}
