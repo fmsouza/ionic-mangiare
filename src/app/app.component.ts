@@ -8,7 +8,7 @@ import {Splashscreen, StatusBar} from 'ionic-native';
 })
 export class Application {
 
-    public rootPage: any = DEFAULT_PAGE;
+    public rootPage: any;
 
     public constructor(platform: Platform) {
         platform.ready().then(() => this.onReady());
@@ -18,6 +18,7 @@ export class Application {
         // Okay, so the platform is ready and our plugins are available.
         // Here you can do any higher level native things you might need.
         StatusBar.styleDefault();
+        this.rootPage = DEFAULT_PAGE;
         Splashscreen.hide();
     }
 }

@@ -1,3 +1,4 @@
+import { MainPage } from './pages/main/page';
 import { AuthService } from './services/auth';
 import { FacebookService } from './services/facebook';
 import { LoginPage } from './pages/login/page';
@@ -11,7 +12,7 @@ import { CardsPage } from './pages/cards/page';
 import { AboutPage } from './pages/about/page';
 import strings from './strings';
 
-export const DEFAULT_PAGE: any = LoginPage;
+export const DEFAULT_PAGE: any = MainPage;
 export const DEFAULT_LANG: string = 'en-US';
 
 export const TABS: any[] = [
@@ -26,6 +27,7 @@ export const COMPONENTS: any = [
     ChatPage,
     ChatsPage,
     LoginPage,
+    MainPage,
     ProfilePage,
     SettingsPage,
     TabsPage,
