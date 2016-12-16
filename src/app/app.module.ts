@@ -7,6 +7,12 @@ import {Storage} from '@ionic/storage';
 import {IonicApp, IonicModule, IonicErrorHandler} from 'ionic-angular';
 import {COMPONENTS, PROVIDERS} from '../const';
 
+/**
+ * AppModule is used for configuring the whole environment,
+ * setting up every module, provider and component required
+ * to make the app to work.
+ * @class {AppModule}
+ */
 @NgModule({
     declarations: [ Application, ...COMPONENTS],
     entryComponents: COMPONENTS,
