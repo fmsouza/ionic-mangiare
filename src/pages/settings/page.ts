@@ -39,8 +39,8 @@ export class SettingsPage {
      */
     public onClickLogout(): void {
         this.service.logout()
-            .then(() => this.nav.setRoot(DEFAULT_PAGE))
-            .catch(error => console.error(`Logout error: ${JSON.stringify(error)}`));
+            .catch(error => console.error(`Logout error: ${JSON.stringify(error)}`))
+            .then(() => this.nav.setRoot(DEFAULT_PAGE));
     }
 
     /**
