@@ -1,8 +1,8 @@
-import { User } from '../../models/user';
 import { Component } from '@angular/core';
 import { AlertController, NavController } from 'ionic-angular';
-import { AuthService } from '../../services/auth';
-import { TabsPage } from '../tabs/page';
+import { User } from '../../models';
+import { TabsPage } from '../';
+import { AuthService } from '../../services';
 import strings from '../../strings';
 
 /**

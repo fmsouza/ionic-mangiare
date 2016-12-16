@@ -1,8 +1,8 @@
-import { User } from './../models/user';
-import { Http } from '@angular/http';
-import { Facebook } from 'ionic-native';
 import { Injectable } from '@angular/core';
+import { Facebook } from 'ionic-native';
+import { Http } from '@angular/http';
 import { FACEBOOK_FIELDS, FACEBOOK_PERMISSIONS } from '../const';
+import { User } from '../models';
 
 /**
  * FacebookService class is used to access Facebook API.

@@ -1,6 +1,6 @@
-import { User } from './../models/user';
-import { FacebookService } from './facebook';
 import { Injectable } from '@angular/core';
+import { User } from '../models';
+import { FacebookService } from './facebook';
 
 /**
  * Implements the authentication as a provider

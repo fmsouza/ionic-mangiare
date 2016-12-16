@@ -1,11 +1,9 @@
-import { DEFAULT_PAGE } from '../../const';
-import { User } from '../../models/user';
-import {Component} from '@angular/core';
+import { Component } from '@angular/core';
 import { App, NavController } from 'ionic-angular';
-import { AuthService } from '../../services/auth';
-import { ProfilePage } from '../profile/page';
-import { TermsPage } from '../terms/page';
-import { AboutPage } from '../about/page';
+import { DEFAULT_PAGE } from '../../const';
+import { User } from '../../models';
+import { AuthService } from '../../services';
+import { ProfilePage, TermsPage, AboutPage } from '../';
 import strings from '../../strings';
 
 /**

@@ -1,6 +1,6 @@
-import {Component} from '@angular/core';
+import { Component } from '@angular/core';
 import { App, NavController } from 'ionic-angular';
-import {ChatPage} from '../chat/page';
+import { ChatPage } from '../';
 import strings from '../../strings';
 
 /**

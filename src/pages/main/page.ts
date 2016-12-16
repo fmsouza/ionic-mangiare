@@ -1,8 +1,7 @@
-import { TabsPage } from '../tabs/page';
-import { LoginPage } from '../login/page';
-import { AuthService } from '../../services/auth';
-import { App, NavController } from 'ionic-angular';
 import {Component} from '@angular/core';
+import { App, NavController } from 'ionic-angular';
+import { LoginPage, TabsPage } from '../';
+import { AuthService } from '../../services';
 
 /**
  * MainPage class is the Main view controller

@@ -1,6 +1,6 @@
 import { App, NavController } from 'ionic-angular';
-import {Component} from '@angular/core';
-import {TABS} from '../../const';
+import { Component } from '@angular/core';
+import { TABS } from '../../const';
 
 /**
  * TabsPage class is the Tabs view controller

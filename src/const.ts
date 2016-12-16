@@ -1,42 +1,21 @@
-import { MainPage } from './pages/main/page';
-import { AuthService } from './services/auth';
-import { FacebookService } from './services/facebook';
-import { LoginPage } from './pages/login/page';
-import { ProfilePage } from './pages/profile/page';
-import { TermsPage } from './pages/terms/page';
-import { TabsPage } from './pages/tabs/page';
-import { SettingsPage } from './pages/settings/page';
-import { ChatPage } from './pages/chat/page';
-import { ChatsPage } from './pages/chats/page';
-import { CardsPage } from './pages/cards/page';
-import { AboutPage } from './pages/about/page';
 import strings from './strings';
+import * as Pages from './pages';
+import * as Services from './services';
 
-export const DEFAULT_PAGE: any = MainPage;
+export const DEFAULT_PAGE: any = Pages.MainPage;
 export const DEFAULT_LANG: string = 'en-US';
 
 export const TABS: any[] = [
-    { icon: 'people', title: strings.TAB_CARDS, component: CardsPage },
-    { icon: 'chatbubbles', title: strings.TAB_CHATS, component: ChatsPage },
-    { icon: 'settings', title: strings.TAB_SETTINGS, component: SettingsPage }
+    { icon: 'people', title: strings.TAB_CARDS, component: Pages.CardsPage },
+    { icon: 'chatbubbles', title: strings.TAB_CHATS, component: Pages.ChatsPage },
+    { icon: 'settings', title: strings.TAB_SETTINGS, component: Pages.SettingsPage }
 ];
 
-export const COMPONENTS: any = [
-    AboutPage,
-    CardsPage,
-    ChatPage,
-    ChatsPage,
-    LoginPage,
-    MainPage,
-    ProfilePage,
-    SettingsPage,
-    TabsPage,
-    TermsPage,
-];
+export const COMPONENTS: any = Pages;
 
 export const PROVIDERS: any = [
-    FacebookService,
-    AuthService,
+    Services.AuthService,
+    Services.FacebookService,
 ];
 
 export const FACEBOOK_FIELDS: string[] = [
