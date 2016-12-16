@@ -8,9 +8,9 @@
     <ion-list>
         <ion-item>
             <ion-avatar item-left>
-                <img src="{{ user?.avatar }}">
+                <img src="{{user?.avatar || '/assets/imgs/avatar.png' }}" />
             </ion-avatar>
-            <h2>{{ user?.name }}</h2>
+            <h2>{{ user?.name || Text.PAGE_SETTINGS_USER }}</h2>
             <p>{{ user?.email }}</p>
             <button ion-button item-right icon-only clear color="dark" (click)="onClickLogout()">
                 <ion-icon name="log-out"></ion-icon>

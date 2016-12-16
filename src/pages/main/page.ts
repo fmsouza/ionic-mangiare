@@ -36,7 +36,8 @@ export class MainPage {
      */
     public ionViewWillLoad(): void {
         this.service.getLoginStatus()
-            .then(({status}) => this.onStatusLoaded(status));
+            .then(({status}) => this.onStatusLoaded(status))
+            .catch(error => this.onStatusLoadFailed(error));
     }
 
     /**
@@ -55,6 +56,11 @@ export class MainPage {
             default:
                 return this.goToLogin();
         }
+    }
+
+    private onStatusLoadFailed(error: Error): void {
+        console.error(error);
+        this.goToLogin();
     }
 
     /**

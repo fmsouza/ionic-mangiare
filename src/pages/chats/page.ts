@@ -20,7 +20,7 @@ import strings from '../../strings';
             <ion-list [virtualScroll]="chats">
                 <ion-item *virtualItem="let chat" (click)="onClickChat(chat)">
                     <ion-avatar item-left>
-                        <img src="{{chat.avatar}}">
+                        <ion-img [src]="chat.avatar"></ion-img>
                     </ion-avatar>
                     <h2>{{chat.name}}</h2>
                     <p>{{chat.lastMessage}}</p>

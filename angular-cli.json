@@ -1,7 +1,7 @@
 {
   "project": {
     "version": "1.0.0",
-    "name": "ionic2-seed"
+    "name": "mangiare"
   },
   "apps": [
     {
@@ -9,7 +9,7 @@
       "outDir": "www",
       "assets": "assets",
       "index": "index.html",
-      "main": "app/main.dev.ts",
+      "main": "app/main.ts",
       "test": "app/test.ts",
       "tsconfig": "tsconfig.json",
       "prefix": "app",

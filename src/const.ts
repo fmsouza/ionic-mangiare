@@ -11,7 +11,18 @@ export const TABS: any[] = [
     { icon: 'settings', title: strings.TAB_SETTINGS, component: Pages.SettingsPage }
 ];
 
-export const COMPONENTS: any = Pages;
+export const COMPONENTS: any = [
+    Pages.AboutPage,
+    Pages.CardsPage,
+    Pages.ChatPage,
+    Pages.ChatsPage,
+    Pages.LoginPage,
+    Pages.MainPage,
+    Pages.ProfilePage,
+    Pages.SettingsPage,
+    Pages.TabsPage,
+    Pages.TermsPage,
+];
 
 export const PROVIDERS: any = [
     Services.AuthService,

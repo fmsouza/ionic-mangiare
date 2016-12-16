@@ -9,7 +9,7 @@
         <div class="message-wrapper {{ (message.user==='Brandon Lawrence')? 'me':'them' }}">
             <div class="text-wrapper" *ngIf="message.user==='Brandon Lawrence'">{{message.text}}</div>
             <div class="circle-wrapper">
-                <img src="{{message.avatar}}" />
+                <ion-img [src]="message.avatar"></ion-img>
             </div>
             <div class="text-wrapper" *ngIf="message.user!=='Brandon Lawrence'">{{message.text}}</div>
         </div>

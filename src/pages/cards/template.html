@@ -1,4 +1,4 @@
-<ion-header no-shadow>
+<ion-header no-border>
     <ion-navbar color="white">
         <ion-title>{{ Text.PAGE_CARDS_TITLE }}</ion-title>
     </ion-navbar>
@@ -8,7 +8,7 @@
     <ul class="stack" swing-stack [stackConfig]="stackConfig" #stack (throwout)="onThrowOut($event)">
         <div *ngFor="let c of cards">
             <ion-card #cards swing-card [ngClass]="c.name">
-                <img src="{{c.avatar}}"/>
+                <img src="{{c.avatar}}" />
                 <ion-card-content>
                     <ion-card-title>
                         {{c.name}}
