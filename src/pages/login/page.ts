@@ -42,7 +42,9 @@ export class LoginPage {
      * @return {void}
      */
     public onClickButtonGoogle(): void {
-        console.log("Clicked in the Google button");
+        this.service.loginWithGooglePlus()
+        .then(user => this.onLoginSuccess(user))
+        .catch(error => this.onLoginError(error));
     }
 
     /**
@@ -63,7 +65,7 @@ export class LoginPage {
     private onLoginError(error: Error): void {
         this.ctrl.create({
             title: 'Login error',
-            subTitle: 'An error ocurred while trying to log in.',
+            subTitle: `An error ocurred while trying to log in: ${JSON.stringify(error)}`,
             buttons: ['Ok']
         }).present();
     }

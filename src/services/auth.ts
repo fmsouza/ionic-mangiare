@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { User } from '../models';
 import { FacebookService } from './facebook';
+import { GooglePlusService } from './google';
 
 /**
  * Implements the authentication as a provider
@@ -9,7 +10,7 @@ import { FacebookService } from './facebook';
 @Injectable()
 export class AuthService {
 
-    public constructor(private facebookService: FacebookService) {}
+    public constructor(private facebookService: FacebookService, private googleService: GooglePlusService) {}
 
     /**
      * Checks the login status on the device
@@ -26,6 +27,11 @@ export class AuthService {
     public loginWithFacebook(): Promise<User> {
         return this.facebookService.login()
             .then(auth => this.getUser());
+    }
+
+    public loginWithGooglePlus(): Promise<User> {
+        return this.googleService.login()
+            .then(auth => console.log(JSON.stringify(auth)));
     }
 
     /**

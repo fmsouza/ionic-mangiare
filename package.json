@@ -81,6 +81,13 @@
       "locator": "cordova-plugin-facebook4",
       "id": "cordova-plugin-facebook4"
     },
+    {
+      "variables": {
+        "REVERSED_CLIENT_ID": "io.github.fmsouza.mangiare"
+      },
+      "locator": "cordova-plugin-googleplus",
+      "id": "cordova-plugin-googleplus"
+    },
     "cordova-plugin-inappbrowser",
     "cordova-plugin-statusbar",
     "cordova-plugin-splashscreen",

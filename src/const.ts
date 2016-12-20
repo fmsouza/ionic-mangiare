@@ -27,6 +27,7 @@ export const COMPONENTS: any = [
 export const PROVIDERS: any = [
     Services.AuthService,
     Services.FacebookService,
+    Services.GooglePlusService,
 ];
 
 export const FACEBOOK_FIELDS: string[] = [
@@ -45,3 +46,14 @@ export const FACEBOOK_PERMISSIONS: string[] = [
     'user_birthday',
     'user_location',
 ];
+
+export const GOOGLEPLUS_OPTIONS: any = {
+    scopes: [
+        'https://www.googleapis.com/auth/plus.login',
+        'https://www.googleapis.com/auth/plus.me',
+        'https://www.googleapis.com/auth/user.birthday.read',
+        'https://www.googleapis.com/auth/user.addresses.read',
+    ].join(' '),
+    webClientId: '669351747838-90bniig2jmao349otatifdbmabloct34.apps.googleusercontent.com',
+    offline: true,
+};
