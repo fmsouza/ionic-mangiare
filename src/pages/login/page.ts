@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AlertController, NavController } from 'ionic-angular';
+import { ToastController, NavController } from 'ionic-angular';
 import { User } from '../../models';
 import { TabsPage } from '../';
 import { AuthService } from '../../services';
@@ -17,7 +17,7 @@ export class LoginPage {
         return strings;
     }
 
-    public constructor(private nav: NavController, private service: AuthService, private ctrl: AlertController) {}
+    public constructor(private nav: NavController, private service: AuthService, private ctrl: ToastController) {}
 
     /**
      * Avoids the login and takes the user directly to the application.
@@ -64,9 +64,9 @@ export class LoginPage {
      */
     private onLoginError(error: Error): void {
         this.ctrl.create({
-            title: 'Login error',
-            subTitle: `An error ocurred while trying to log in: ${JSON.stringify(error)}`,
-            buttons: ['Ok']
+            position: 'bottom',
+            message: `An error ocurred while trying to log in: ${JSON.stringify(error)}`,
+            duration: 5000
         }).present();
     }
 }
