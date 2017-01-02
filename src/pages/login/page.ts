@@ -65,7 +65,7 @@ export class LoginPage {
     private onLoginError(error: Error): void {
         this.ctrl.create({
             position: 'bottom',
-            message: `An error ocurred while trying to log in: ${JSON.stringify(error)}`,
+            message: `${this.Text.PAGE_LOGIN_ERROR} ${JSON.stringify(error)}`,
             duration: 5000
         }).present();
     }

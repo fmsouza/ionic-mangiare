@@ -8,6 +8,8 @@ export const TAB_CHATS: string = 'Conversas';
 
 export const PAGE_CHAT_MESSAGEBOX: string = 'Escreva sua mensagem...';
 
+export const PAGE_LOGIN_ERROR: string = 'Ocorreu um erro ao tentar realizar o login:';
+
 export const PAGE_SETTINGS_TITLE: string = 'Outros';
 export const TAB_SETTINGS: string = 'Outros';
 export const PAGE_SETTINGS_USER: string = 'Usuário';
