@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { App, NavController } from 'ionic-angular';
 import { LoginPage, TabsPage } from '../';
 import { AuthService } from '../../services';
+import { AuthState } from '../../const';
 
 /**
  * MainPage class is the Main view controller. It checks for user login
@@ -48,11 +49,11 @@ export class MainPage {
     private onStatusLoaded(status: string): void {
         switch (status) {
 
-            case 'connected':
+            case AuthState.CONNECTED:
                 return this.goToApplication();
 
-            case 'not_authorized':
-            case 'unknown':
+            case AuthState.NOT_AUTHORIZED:
+            case AuthState.UNKNOWN:
             default:
                 return this.goToLogin();
         }
