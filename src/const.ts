@@ -1,6 +1,7 @@
 import strings from './strings';
 import * as Pages from './pages';
 import * as Services from './services';
+import * as Dao from './dao';
 
 export const DEFAULT_PAGE: any = Pages.MainPage;
 export const DEFAULT_LANG: string = 'en-US';
@@ -10,6 +11,17 @@ export const TABS: any[] = [
     { icon: 'chatbubbles', title: strings.TAB_CHATS, component: Pages.ChatsPage },
     { icon: 'settings', title: strings.TAB_SETTINGS, component: Pages.SettingsPage }
 ];
+
+export const AuthState = {
+    CONNECTED: 'connected',
+    NOT_AUTHORIZED: 'not_authorized',
+    UNKNOWN: 'unknown'
+};
+
+export const AuthProvider = {
+    FACEBOOK: 'facebook',
+    GOOGLE: 'google'
+};
 
 export const COMPONENTS: any = [
     Pages.AboutPage,
@@ -28,6 +40,7 @@ export const PROVIDERS: any = [
     Services.AuthService,
     Services.FacebookService,
     Services.GooglePlusService,
+    Dao.PreferencesDAO
 ];
 
 export const FACEBOOK_FIELDS: string[] = [
